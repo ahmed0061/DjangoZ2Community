@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    
+      <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ pt.author.profile.image.url }}">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="{% url 'user-posts' pt.author.username %}">{{ pt.author }}</a>
+            <small class="text-muted">{{ pt.date_posted|date:"F d, Y" }}</small>
+          </div>
+          <h2 class="article-title">{{ pt.title }}</h2>
+          <p class="article-content">{{ pt.content }}</p>
+        </div>
+      </article>
+
+{% endblock content %}
